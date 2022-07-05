@@ -6,7 +6,7 @@
 /*   By: kmeixner <konstantin.meixner@freenet.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 17:03:12 by kmeixner          #+#    #+#             */
-/*   Updated: 2022/07/05 17:44:15 by kmeixner         ###   ########.fr       */
+/*   Updated: 2022/07/05 17:49:30 by kmeixner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,20 @@ Base *generate(void)
 	srand(time(NULL));
 	int i = rand();
 	if (i % 3 == 0)
+	{
+		std::cout << "Generating A" << std::endl;
 		return (new A);
+	}
 	if (i % 3 == 1)
+	{
+		std::cout << "Generating B" << std::endl;
 		return (new B);
+	}
 	if (i % 3 == 2)
+	{	
+		std::cout << "Generating C" << std::endl;
 		return (new C);
+	}
 	return (NULL);
 }
 
@@ -35,7 +44,6 @@ void identify(Base *p)
 	A *pa = dynamic_cast<A*>(p);
 	B *pb = dynamic_cast<B*>(p);
 	C *pc = dynamic_cast<C*>(p);
-
 	if (pa)
 		std::cout << "A" << std::endl;
 	if (pb)
